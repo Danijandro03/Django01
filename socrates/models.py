@@ -1,9 +1,14 @@
 from django.db import models
 from pygments.lexers import get_all_lexers
 from pygments.styles import get_all_styles
+from django.core import serializers 
 
-# Create your models here.
-class consulta (models.Model):
+
+
+'''data = serializers.serialize('json', fb_city.objects.all())'''
+
+
+''' class fb_city (models.Model):
     idcity = models.IntegerField() 
     idcountry = models.IntegerField()
     name = models.CharField(max_length=50)
@@ -19,4 +24,4 @@ class consulta (models.Model):
         ordering = ["idcity"]
 
     def __str__(self):
-        return self.name
+        return self.name '''

@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'socrates',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'serializers'
 ]
 
 MIDDLEWARE = [
@@ -64,13 +65,38 @@ WSGI_APPLICATION = 'dbs.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+DATABASE_ROUTERS = ['socrates.routers.conectSoc', 'flybox.routers.conectFbx']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-}, 
-    fb_qa
+
+    'fb_qa': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'fb_qa',
+        'USER': 'desarrollo',
+        'PASSWORD': 'Desarrollo',
+        'HOST': '199.89.55.101',
+    },
+    
+    'so_qa': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'so_qa',
+        'USER': 'desarrollo',
+        'PASSWORD': 'Desarrollo',
+        'HOST': '192.168.190.9',
+    },
+    
+    'bi_qa': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'bi_qa',
+        'USER': 'desarrollo',
+        'PASSWORD': 'Desarrollo',
+        'HOST': '192.168.190.9',
+    }
+}
 
 
 # Password validation

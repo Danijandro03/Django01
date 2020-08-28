@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import consulta
+''' from .models import fb_city
 
 
-class consultaSerializer(serializers.ModelSerializer):
+class fb_citySerializer(serializers.ModelSerializer):
     class Meta:
-        model = consulta
-        fields = '__all__'
+        model = fb_city
+        fields = '__all__' '''
