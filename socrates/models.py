@@ -3,10 +3,10 @@ from django.db import models
 '''data = serializers.serialize('json', fb_city.objects.all())'''
 
 
-class fb_city (models.Model):
+class f (models.Model):
     idcity = models.IntegerField() 
     idcountry = models.IntegerField()
-    name = 'MIAMI'
+    name = models.CharField(max_length=50)
     code = models.CharField(max_length=10)
     is_courrier = models.BooleanField()
     idstate = models.IntegerField() 
@@ -16,4 +16,4 @@ class fb_city (models.Model):
     editado = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name 
+        return f.
