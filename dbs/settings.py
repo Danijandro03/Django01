@@ -28,7 +28,10 @@ INSTALLED_APPS = [
     'socrates',
     'rest_framework',
     'corsheaders',
-    'serializers'
+    'serializers',
+    'flybox',
+    'BI_dprs01'
+
 ]
 
 MIDDLEWARE = [
@@ -65,39 +68,39 @@ WSGI_APPLICATION = 'dbs.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASE_ROUTERS = ['socrates.routers.conectSoc', 'flybox.routers.conectFbx']
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+ 
     },
 
     'fb_qa': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'fb_qa',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'SREP_Test',
         'USER': 'desarrollo',
         'PASSWORD': 'Desarrollo',
         'HOST': '199.89.55.101',
     },
     
     'so_qa': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'so_qa',
+        'ENGINE': 'django.db.backends.sqlite3', 
+        'NAME': 'Flybox_DB',
         'USER': 'desarrollo',
         'PASSWORD': 'Desarrollo',
-        'HOST': '192.168.190.9',
+        'HOST': '199.89.55.101',
     },
     
     'bi_qa': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'bi_qa',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'DeprisaWeb',
         'USER': 'desarrollo',
         'PASSWORD': 'Desarrollo',
         'HOST': '192.168.190.9',
     }
 }
 
+DATABASE_ROUTERS = ['path.to.conectSoc', 'flybox.routers.conectFbx']
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

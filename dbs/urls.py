@@ -1,16 +1,16 @@
 from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
-''' from socrates.views import fb_cityViewSet '''
-''' from socrates.serializers import fb_citySerializer  '''
+from socrates.views import fb_cityViewSet
+from socrates.serializers import fb_citySerializer
 from django.urls import path, include
 
-''' router = routers.SimpleRouter()
+router = routers.SimpleRouter()
 
 router.register(r'socrates', fb_cityViewSet)
 
-urlpatterns = router.urls '''
+urlpatterns = router.urls 
 
-urlpatterns = [
+urlpatterns += [
     path('admin/', admin.site.urls)  
 ]
